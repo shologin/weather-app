@@ -1,21 +1,20 @@
-import "./BadgePrimary.css";
-import rain_strong_2x from "../../assets/icons/rain_strong_2x.png";
+import rain_strong_2x from "../assets/icons/rain_strong_2x.png";
 
 export const BadgePrimary = () => {
   return (
-    <div className="badge-primary glass-effect">
-      <div className="badgePrimary-top">
+    <div className="badge-primary bg-green-700 py-2 px-5">
+      <div className="badgePrimary-top flex items-center gap-5">
         <div className="badgePrimary-top-temperature">
-          <h3>
+          <h3 className="text-4xl">
             4 <span className="text-secondary">&deg;C</span>
           </h3>
-          <p>Rainy</p>
+          <p className="text-lg">Rainy</p>
         </div>
         <div className="badgePrimary-top-icon">
           <img src={rain_strong_2x} alt="icon" width="96px" />
         </div>
       </div>
-      <div className="badgePrimary-city">London</div>
+      <div className="badgePrimary-city text-2xl">London</div>
     </div>
   );
 };
