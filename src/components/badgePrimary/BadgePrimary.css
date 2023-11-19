@@ -1,0 +1,22 @@
+.badge-primary {
+  padding: 10px 20px;
+}
+
+.badgePrimary-top {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.badgePrimary-top-temperature {
+  font-size: 38px;
+}
+
+.badgePrimary-top-temperature p {
+    font-size: 18px;
+}
+
+
+.badgePrimary-city {
+  font-size: 28px;
+}
