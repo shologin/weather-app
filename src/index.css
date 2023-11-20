@@ -551,16 +551,6 @@ video {
   margin-right: auto;
 }
 
-.my-\[1px\] {
-  margin-top: 1px;
-  margin-bottom: 1px;
-}
-
-.my-\[4px\] {
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
 .my-\[2px\] {
   margin-top: 2px;
   margin-bottom: 2px;
@@ -694,6 +684,11 @@ video {
   border-color: rgb(30 41 59 / var(--tw-border-opacity));
 }
 
+.border-slate-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(15 23 42 / var(--tw-border-opacity));
+}
+
 .border-opacity-50 {
   --tw-border-opacity: 0.5;
 }
@@ -706,6 +701,11 @@ video {
 .bg-gray-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.bg-green-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
 
 .bg-slate-800 {
@@ -797,6 +797,10 @@ video {
 .text-slate-500 {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .background {
@@ -927,37 +931,28 @@ video {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-slate-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-800:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.hover\:text-slate-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(226 232 240 / var(--tw-text-opacity));
-}
-
 .hover\:text-slate-800:hover {
   --tw-text-opacity: 1;
   color: rgb(30 41 59 / var(--tw-text-opacity));
 }
 
+.focus\:border:focus {
+  border-width: 1px;
+}
+
+.focus\:border-2:focus {
+  border-width: 2px;
+}
+
+.focus\:border-\[1px\]:focus {
+  border-width: 1px;
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.focus\:outline-slate-900:focus {
+  outline-color: #0f172a;
 }

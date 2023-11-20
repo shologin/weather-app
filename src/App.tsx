@@ -11,8 +11,8 @@ function App() {
         <BadgePrimary />
         <ForecastOptions />
       </div>
-      {/* <Search /> */}
-      <ForecastBadgesContainer />
+      <Search />
+      {/* <ForecastBadgesContainer /> */}
     </div>
   );
 }
