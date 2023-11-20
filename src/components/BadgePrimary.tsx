@@ -1,8 +1,9 @@
 import rain_strong_2x from "../assets/icons/rain_strong_2x.png";
+import { FiMapPin } from "react-icons/fi";
 
 export const BadgePrimary = () => {
   return (
-    <div className="badge-primary bg-green-700 py-2 px-5">
+    <div className="badge-primary py-2 px-5 glass-effect text-slate-400">
       <div className="badgePrimary-top flex items-center gap-5">
         <div className="badgePrimary-top-temperature">
           <h3 className="text-4xl">
@@ -14,7 +15,12 @@ export const BadgePrimary = () => {
           <img src={rain_strong_2x} alt="icon" width="96px" />
         </div>
       </div>
-      <div className="badgePrimary-city text-2xl">London</div>
+      <div className="flex items-center justify-between text-slate-400">
+        <span className="text-xl ">London</span>
+        <button className="inline-block text-slate-500 p-2 rounded-lg hover:bg-slate-400 hover:text-slate-800">
+          <FiMapPin />
+        </button>
+      </div>
     </div>
   );
 };

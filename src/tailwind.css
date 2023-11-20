@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
 .background {
   background-image: repeating-linear-gradient(
       135deg,
@@ -61,19 +63,52 @@
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .body {
-  background: #52525b;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  background-color: rgb(41, 37, 37);
 }
 
 .app {
   width: min(100% - 50px, 650px);
 }
 
-/* .glass-effect {
+.glass-effect {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.1px);
   -webkit-backdrop-filter: blur(2.1px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-} */
+}
+
+/* scrollbar styles */
+
+/* width */
+::-webkit-scrollbar {
+  height: 5px;
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888888;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
