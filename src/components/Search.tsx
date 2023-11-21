@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { geoApiResponse } from "../types/Types";
+import classNames from "classnames";
+import { SearchProps, geoApiResponse } from "../types/Types";
 import { FiGlobe } from "react-icons/fi";
 import { IoMdLocate } from "react-icons/io";
 
@@ -14,7 +15,7 @@ const data = [
   { name: "Lisboan" },
 ];
 
-export const Search = () => {
+export const Search = ({ locationState, setLocationState, handleOpenForecast }: SearchProps) => {
   const [resultsOpen, setResultsOpen] = useState(false);
   const [filteredData, setFilteredData] = useState<{ name: string }[]>([]);
 
@@ -28,8 +29,12 @@ export const Search = () => {
   };
 
   const findLocation = () => {
+    setLocationState({
+      locationLoading: true,
+      locationData: null,
+      locationError: null,
+    });
     const success = (position: GeolocationPosition) => {
-      // console.log(position.coords);
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
 
@@ -48,24 +53,54 @@ export const Search = () => {
               city: data.city,
               country: data.countryName,
             };
-            console.log(locatedPlace);
+            setLocationState({
+              locationLoading: false,
+              locationData: locatedPlace,
+              locationError: null,
+            });
+            handleOpenForecast();
           });
       } catch (err) {
         console.log(err);
+        setLocationState({
+          locationLoading: false,
+          locationData: null,
+          locationError: "Oops...something went wrong",
+        });
       }
     };
     const failure = (err: GeolocationPositionError) => {
       console.log(err);
+      setLocationState({
+        locationLoading: false,
+        locationData: null,
+        locationError: "Denied in location access",
+      });
     };
     window.navigator.geolocation.getCurrentPosition(success, failure);
   };
 
   return (
     <div className="search mt-2 w-2/4 relative">
-      <div className="search-bar flex justify-between items-center bg-gray-500 py-2 px-4 rounded-full">
+      <div
+        className={classNames(
+          "search-bar",
+          "flex",
+          "justify-between",
+          "items-center",
+          "bg-gray-500",
+          "py-2",
+          "px-4",
+          "rounded-full",
+          {
+            "bg-gray-800": locationState?.locationLoading,
+          }
+        )}
+      >
         <input
           type="text"
-          placeholder="Enter location"
+          placeholder={locationState?.locationLoading ? "Searching..." : "Enter location"}
+          disabled={locationState?.locationLoading ? true : false}
           className="w-full bg-transparent focus:outline-none text-gray-100"
           maxLength={30}
           onChange={(e) => handleChange(e.target.value)}
