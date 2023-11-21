@@ -31,6 +31,7 @@ export const findLocation = (setLocationState: Function, handleOpenForecast: Fun
             locationData: locatedPlace,
             locationError: null,
           });
+          localStorage.setItem("preferredCity", JSON.stringify({ city: locatedPlace.city, country: locatedPlace.country }));
           handleOpenForecast();
         });
     } catch (err) {

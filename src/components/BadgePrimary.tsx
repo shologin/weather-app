@@ -20,7 +20,8 @@ export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState }: ba
       </div>
       <div className="flex items-center justify-between text-slate-400">
         <div className="text-xl">
-          {locationState.locationData?.city} <span className="block text-sm max-w-[200px] truncate">{locationState.locationData?.country}</span>
+          <div className="max-w-[200px] truncate">{locationState.locationData?.city}</div>
+          <div className="text-sm max-w-[200px] truncate">{locationState.locationData?.country}</div>
         </div>
         {!locationState.locationLoading ? (
           <button
