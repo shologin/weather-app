@@ -1,12 +1,7 @@
 import { useState } from "react";
+import { geoApiResponse } from "../types/Types";
 import { FiGlobe } from "react-icons/fi";
 import { IoMdLocate } from "react-icons/io";
-
-type geoApiResponse = {
-  city: string;
-  countryName: string;
-  [key: string]: unknown;
-};
 
 const data = [
   { name: "San Francisco" },
