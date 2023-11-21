@@ -19,12 +19,15 @@ export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState }: ba
         </div>
       </div>
       <div className="flex items-center justify-between text-slate-400">
-        <span className="text-xl ">London</span>
+        <div className="text-xl">
+          {locationState.locationData?.city} <span className="block text-sm max-w-[200px] truncate">{locationState.locationData?.country}</span>
+        </div>
         {!locationState.locationLoading ? (
           <button
             className={classNames(
               "inline-block",
               "text-slate-500",
+              "ml-2",
               "p-2",
               "rounded-lg",
               "hover:bg-slate-400",
@@ -39,7 +42,7 @@ export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState }: ba
             <FiMapPin />
           </button>
         ) : (
-          <Puff width={24} height={24} color="#16a34a" wrapperStyle={{padding: "4px"}} />
+          <Puff width={24} height={24} color="#16a34a" wrapperStyle={{ padding: "4px" }} />
         )}
       </div>
     </div>

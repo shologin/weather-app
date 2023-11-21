@@ -21,13 +21,17 @@ export const Search = ({ locationState, setLocationState, handleOpenForecast }: 
   };
 
   // user clicked on city in dropdown
-  const handleChoice = (name: string, country: string) => {    
+  const handleChoice = (name: string, country: string) => {
     setLocationState({
       locationLoading: false,
-      locationData: { city: name, country: country},
+      locationData: { city: name, country: country },
       locationError: null,
     });
+    localStorage.setItem("preferredCity", JSON.stringify({ city: name, country }));
+    handleOpenForecast()
   };
+
+  // auto finding location findLocation() imported to this file and called in template
 
   return (
     <div className="search mt-2 w-2/4 relative">

@@ -12,7 +12,7 @@ function App() {
 
   const [locationState, setLocationState] = useState<LocationState>({
     locationLoading: false,
-    locationData: null,
+    locationData: JSON.parse(localStorage.getItem("preferredCity")!) || { city: "London", country: "United Kingdom" },
     locationError: null,
   });
 
@@ -27,8 +27,12 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(locationState);
-  }, [locationState]);
+    console.log("Current city: ", locationState.locationData?.city);
+  }, [locationState.locationData]);
+
+  // useEffect(() => {
+  //   console.log(locationState);
+  // }, [locationState]);
   return (
     <div className="app background flex flex-col justify-center items-center py-10 mt-10 mx-auto">
       <div className="flex-center gap-5">
