@@ -25,3 +25,10 @@ export type SearchProps = {
   setLocationState: Function;
   handleOpenForecast: () => void;
 };
+
+export type CityAPIData = {
+  id: number;
+  name: string;
+  country: string
+  [key: string]: unknown;
+};

@@ -35,10 +35,16 @@ function App() {
         <BadgePrimary searchOpen={searchOpen} handleOpenSearch={handleOpenSearch} locationState={locationState} />
         <ForecastOptions handleOpenForecast={handleOpenForecast} />
       </div>
-      {searchOpen && !forecastOpen && <Search locationState={locationState} setLocationState={setLocationState} handleOpenForecast={handleOpenForecast} />}
+      {searchOpen && !forecastOpen && (
+        <Search locationState={locationState} setLocationState={setLocationState} handleOpenForecast={handleOpenForecast} />
+      )}
       {forecastOpen && !searchOpen && <ForecastBadgesContainer />}
     </div>
   );
 }
 
 export default App;
+
+// fetch("http://api.weatherapi.com/v1/search.json?key=a6a87d8563134d0bace175318232111&q=lond")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
