@@ -1,24 +1,27 @@
 import classNames from "classnames";
-import { badgePrimaryProps } from "../types/Types";
-import rain_strong_2x from "../assets/icons/rain_strong_2x.png";
-import { FiMapPin } from "react-icons/fi";
-import { Puff } from "react-loader-spinner";
 import Popup from "reactjs-popup";
+import { badgePrimaryProps } from "../types/Types";
+import { FiMapPin } from "react-icons/fi";
+import { Puff, Radio } from "react-loader-spinner";
 
-export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState }: badgePrimaryProps) => {
+export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState, weatherState }: badgePrimaryProps) => {
   return (
     <div className="badge-primary py-2 px-5 glass-effect text-slate-400">
-      <div className="badgePrimary-top flex items-center gap-5">
-        <div className="badgePrimary-top-temperature">
-          <h3 className="text-4xl">
-            4 <span className="text-secondary">&deg;C</span>
-          </h3>
-          <p className="text-lg">Rainy</p>
+      {weatherState.loading && <Radio width={65} height={65} colors={["#16a34a", "#14532d", "#052e16"]} />}
+      {weatherState.data?.current && (
+        <div className="badgePrimary-top flex items-center justify-between gap-5">
+          <div className="badgePrimary-top-temperature">
+            <h3 className="text-4xl">
+              {weatherState.data.current.temp_c.toFixed(0)}
+              <span className="text-secondary"> &deg;C</span>
+            </h3>
+            <p className="text-sm">{weatherState.data.current.condition.text}</p>
+          </div>
+          <div className="badgePrimary-top-icon">
+            <img src={weatherState.data.current.condition.icon} alt="icon" width="80" className="p-1" />
+          </div>
         </div>
-        <div className="badgePrimary-top-icon">
-          <img src={rain_strong_2x} alt="icon" width="96px" />
-        </div>
-      </div>
+      )}
       <div className="flex items-center justify-between text-slate-400">
         <Popup
           trigger={

@@ -18,9 +18,7 @@ export const Search = ({ locationState, setLocationState, handleOpenForecast }: 
       .then((data) => {
         setFilteredData(data);
       });
-  };
-  console.log(filteredData);
-  
+  };  
 
   // user clicked on city in dropdown
   const handleChoice = (id: number, name: string, region: string, country: string) => {
