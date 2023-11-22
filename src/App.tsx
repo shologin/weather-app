@@ -12,7 +12,12 @@ function App() {
 
   const [locationState, setLocationState] = useState<LocationState>({
     locationLoading: false,
-    locationData: JSON.parse(localStorage.getItem("preferredCity")!) || { city: "London", country: "United Kingdom" },
+    locationData: JSON.parse(localStorage.getItem("preferredCity")!) || {
+      id: 2801268,
+      city: "London",
+      region: "City of London, Greater London",
+      country: "United Kingdom",
+    },
     locationError: null,
   });
 
@@ -26,13 +31,13 @@ function App() {
     setForecastOpen(true);
   };
 
-  useEffect(() => {
-    console.log("Current city: ", locationState.locationData?.city);
-  }, [locationState.locationData]);
-
   // useEffect(() => {
-  //   console.log(locationState);
-  // }, [locationState]);
+  //   console.log("Current city: ", locationState.locationData?.city);
+  // }, [locationState.locationData]);
+
+  useEffect(() => {
+    console.log(locationState);
+  }, [locationState]);
   return (
     <div className="app background flex flex-col justify-center items-center py-10 mt-10 mx-auto">
       <div className="flex-center gap-5">

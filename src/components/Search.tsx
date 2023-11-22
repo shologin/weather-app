@@ -19,16 +19,18 @@ export const Search = ({ locationState, setLocationState, handleOpenForecast }: 
         setFilteredData(data);
       });
   };
+  console.log(filteredData);
+  
 
   // user clicked on city in dropdown
-  const handleChoice = (name: string, country: string) => {
+  const handleChoice = (id: number, name: string, region: string, country: string) => {
     setLocationState({
       locationLoading: false,
-      locationData: { city: name, country: country },
+      locationData: { id: id, city: name, region: region, country: country },
       locationError: null,
     });
-    localStorage.setItem("preferredCity", JSON.stringify({ city: name, country }));
-    handleOpenForecast()
+    localStorage.setItem("preferredCity", JSON.stringify({ id, city: name, country }));
+    handleOpenForecast();
   };
 
   // auto finding location findLocation() imported to this file and called in template
@@ -81,7 +83,7 @@ export const Search = ({ locationState, setLocationState, handleOpenForecast }: 
               <li
                 className="block bg-gray-300 p-2 cursor-pointer hover:bg-gray-400"
                 key={item.id}
-                onClick={() => handleChoice(item.name, item.country)}
+                onClick={() => handleChoice(item.id, item.name, item.region, item.country)}
               >
                 {item.name}, {item.country}
               </li>

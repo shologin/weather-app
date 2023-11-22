@@ -1,6 +1,8 @@
 export type geoApiResponse = {
-  city: string;
-  countryName: string;
+  id: number
+  name: string;
+  region: string;
+  country: string;
   [key: string]: unknown;
 };
 
@@ -16,7 +18,7 @@ export type ForecastOptionsProps = {
 
 export type LocationState = {
   locationLoading: boolean;
-  locationData: { city: string; country: string } | null;
+  locationData: { id: number, city: string; region: string; country: string } | null;
   locationError: { errorText: string } | null;
 };
 
@@ -29,6 +31,7 @@ export type SearchProps = {
 export type CityAPIData = {
   id: number;
   name: string;
+  region: string,
   country: string
   [key: string]: unknown;
 };
