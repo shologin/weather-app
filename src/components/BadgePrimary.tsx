@@ -3,6 +3,7 @@ import { badgePrimaryProps } from "../types/Types";
 import rain_strong_2x from "../assets/icons/rain_strong_2x.png";
 import { FiMapPin } from "react-icons/fi";
 import { Puff } from "react-loader-spinner";
+import Popup from "reactjs-popup";
 
 export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState }: badgePrimaryProps) => {
   return (
@@ -19,10 +20,23 @@ export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState }: ba
         </div>
       </div>
       <div className="flex items-center justify-between text-slate-400">
-        <div className="text-xl">
-          <div className="max-w-[200px] truncate">{locationState.locationData?.city}</div>
-          <div className="text-sm max-w-[200px] truncate">{locationState.locationData?.country}</div>
-        </div>
+        <Popup
+          trigger={
+            <div className="text-xl cursor-pointer">
+              <div className="max-w-[200px] truncate">{locationState.locationData?.city}</div>
+              <div className="text-sm max-w-[200px] truncate">{locationState.locationData?.country}</div>
+            </div>
+          }
+          position="top center"
+          on="hover"
+          arrowStyle={{ color: "black" }}
+        >
+          <div className="p-2 rounded-lg bg-black text-gray-100 text-xs">
+            <p className="font-bold">{locationState.locationData?.city}</p>
+            <p className="italic text-gray-400">{locationState.locationData?.region}</p>
+            <p className="text-gray-400">{locationState.locationData?.country}</p>
+          </div>
+        </Popup>
         {!locationState.locationLoading ? (
           <button
             className={classNames(
