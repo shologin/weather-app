@@ -27,10 +27,13 @@ export const FlipcardHourly = ({ children, currentHour }: FlipcardProps) => {
               <span>{currentHour?.chance_of_rain}%</span>
             </div>
             <div className="flex justify-between">
-              <span>Snow of snow</span>
+              <span>Chance of snow</span>
               <span>{currentHour?.chance_of_snow}%</span>
             </div>
-            
+            <div className="flex justify-between">
+              <span>Feels like</span>
+              <span>{currentHour?.feelslike_c}&deg;C</span>
+            </div>
           </div>
         </div>
       </div>

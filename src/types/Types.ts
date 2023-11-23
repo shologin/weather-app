@@ -107,6 +107,8 @@ export type ForecastHourlyAPIResponse = {
   chance_of_snow?: number;
   humidity?: number;
   wind_kph?: number;
+  feelslike_c?: number;
+  feelslike_f?: number;
   [key: string]: unknown;
 };
 
