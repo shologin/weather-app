@@ -1,4 +1,5 @@
 import { BadgeSecondaryProps } from "../types/Types";
+import { FlipcardDaily } from "./helpers/FlipcardDaily";
 
 export const BadgeSecondaryDaily = ({ date, weatherState }: BadgeSecondaryProps) => {
   const formatDate = (val: string) => {
@@ -20,22 +21,23 @@ export const BadgeSecondaryDaily = ({ date, weatherState }: BadgeSecondaryProps)
   };
 
   const isToday = checkIsToday(date!);
-  const formattedData = formatDate(date!);
+  const formattedDate = formatDate(date!);
   const currentDate = findDate(date!);
-  
 
   return (
-    <div className="badge-secondary glass-effect flex-center flex-col gap-1 w-[140px] border-[1px] border-slate-500 border-opacity-50 rounded-lg p-2 min-w-fit text-sm text-autumn">
-      {isToday ? (
-        <div className="glass-effect text-center w-full">Today</div>
-      ) : (
-        <div className="badgeSecondary-date">{formattedData}</div>
-      )}
-      <div className="badgeSecondary-icon">
-        <img src={currentDate.day.condition.icon} alt="icon" width="48px" />
-      </div>
-      <div className="text-xs max-w-[120px]">{currentDate.day.condition.text}</div>
-      <h3 className="text-xl">{currentDate.day.avgtemp_c.toFixed(0)}&deg;C</h3>
+    <div className="badge-secondary glass-effect flex-center flex-col gap-1 w-[140px] h-[145px] border-[1px] border-slate-500 border-opacity-50 rounded-lg min-w-fit text-sm text-autumn cursor-pointer">
+      <FlipcardDaily currentDate={currentDate}>
+        {isToday ? (
+          <div className="glass-effect text-center w-full font-bold">Today</div>
+        ) : (
+          <div className="badgeSecondary-date font-bold">{formattedDate}</div>
+        )}
+        <div className="badgeSecondary-icon">
+          <img src={currentDate.day.condition.icon} alt="icon" width="48px" />
+        </div>
+        <div className="text-xs max-w-[120px]">{currentDate.day.condition.text}</div>
+        <h3 className="text-xl">{currentDate.day.avgtemp_c.toFixed(0)}&deg;C</h3>
+      </FlipcardDaily>
     </div>
   );
 };

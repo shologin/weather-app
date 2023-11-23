@@ -28,6 +28,12 @@ export type BadgeSecondaryProps = {
   hour?: string;
 };
 
+export type FlipcardProps = {
+  children: React.ReactNode;
+  currentDate?: ForecastFeatherAPIResponse;
+  currentHour?: ForecastHourlyAPIResponse;
+};
+
 // API response types
 export type geoApiResponse = {
   id: number;
@@ -65,7 +71,7 @@ export type CurrentWeatherAPIResponse = {
 };
 
 export type ForecastFeatherAPIResponse = {
-  date: string;
+  date?: string;
   day: {
     avgtemp_c: number;
     avgtemp_f: number;
@@ -74,6 +80,10 @@ export type ForecastFeatherAPIResponse = {
     maxtemp_f: number;
     mintemp_c: number;
     mintemp_f: number;
+    avghumidity: number;
+    maxwind_kph: number;
+    daily_chance_of_rain: number;
+    daily_chance_of_snow: number;
     [key: string]: unknown;
   };
   hour: {
@@ -84,6 +94,19 @@ export type ForecastFeatherAPIResponse = {
     time: string;
     [key: string]: unknown;
   }[];
+  [key: string]: unknown;
+};
+
+export type ForecastHourlyAPIResponse = {
+  condition: { code: number; icon: string; text: string };
+  is_day: number;
+  temp_c: number;
+  temp_f: number;
+  time: string;
+  chance_of_rain?: number;
+  chance_of_snow?: number;
+  humidity?: number;
+  wind_kph?: number;
   [key: string]: unknown;
 };
 
