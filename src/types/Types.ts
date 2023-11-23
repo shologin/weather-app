@@ -16,6 +16,15 @@ export type SearchProps = {
   handleOpenForecast: () => void;
 };
 
+export type ForecastBadgesContainerProps = {
+  weatherState: WeatherState;
+};
+
+export type BadgeSecondaryProps = {
+  date: string;
+  weatherState: WeatherState;
+};
+
 // API response types
 export type geoApiResponse = {
   id: number;

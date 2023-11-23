@@ -60,7 +60,7 @@ function App() {
       {searchOpen && !forecastOpen && (
         <Search locationState={locationState} setLocationState={setLocationState} handleOpenForecast={handleOpenForecast} />
       )}
-      {forecastOpen && !searchOpen && <ForecastBadgesContainer />}
+      {forecastOpen && !searchOpen && <ForecastBadgesContainer weatherState={weatherState} />}
     </div>
   );
 }
