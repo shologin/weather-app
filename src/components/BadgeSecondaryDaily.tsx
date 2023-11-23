@@ -1,5 +1,5 @@
 import { BadgeSecondaryProps } from "../types/Types";
-import { FlipcardDaily } from "./helpers/FlipcardDaily";
+import { FlipcardDaily } from "../helpers/FlipcardDaily";
 
 export const BadgeSecondaryDaily = ({ date, weatherState }: BadgeSecondaryProps) => {
   const formatDate = (val: string) => {

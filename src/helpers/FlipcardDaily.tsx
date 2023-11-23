@@ -1,6 +1,6 @@
-import { FlipcardProps } from "../../types/Types";
+import { FlipcardProps } from "../types/Types";
 
-export const FlipcardHourly = ({ children, currentHour }: FlipcardProps) => {
+export const FlipcardDaily = ({ children, currentDate }: FlipcardProps) => {
   return (
     <div className="flipcard group w-full h-full [perspective:1000px]">
       <div className="relative h-full w-full transition-all duration-500 rounded-xl shadow-xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -9,30 +9,30 @@ export const FlipcardHourly = ({ children, currentHour }: FlipcardProps) => {
         {/* back */}
         <div className="absolute inset-0 h-full w-full rounded-xl bg-slate-700 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
           <div className="content p-2 text-xs text-left">
-            <p className="mb-1">{currentHour?.condition.text}</p>
+            <p className="mb-1">{currentDate?.day.condition.text}</p>
             <div className="flex justify-between">
-              <span>Temp.</span>
-              <span>{currentHour?.temp_c}&deg;C</span>
+              <span>Min. temp.</span>
+              <span>{currentDate?.day.mintemp_c}&deg;C</span>
             </div>
             <div className="flex justify-between">
-              <span>Humidity</span>
-              <span>{currentHour?.humidity}%</span>
+              <span>Max. temp.</span>
+              <span>{currentDate?.day.maxtemp_c}&deg;C</span>
             </div>
             <div className="flex justify-between">
-              <span>Wind kph</span>
-              <span>{currentHour?.wind_kph}</span>
+              <span>Avg. humidity</span>
+              <span>{currentDate?.day.avghumidity}%</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Max wind</span>
+              <span>{currentDate?.day.maxwind_kph} kph</span>
             </div>
             <div className="flex justify-between">
               <span>Chance of rain</span>
-              <span>{currentHour?.chance_of_rain}%</span>
+              <span>{currentDate?.day.daily_chance_of_rain} %</span>
             </div>
             <div className="flex justify-between">
               <span>Chance of snow</span>
-              <span>{currentHour?.chance_of_snow}%</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Feels like</span>
-              <span>{currentHour?.feelslike_c}&deg;C</span>
+              <span>{currentDate?.day.daily_chance_of_snow} %</span>
             </div>
           </div>
         </div>

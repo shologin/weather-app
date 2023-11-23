@@ -1,5 +1,5 @@
 import { BadgeSecondaryProps, ForecastHourlyAPIResponse } from "../types/Types";
-import { FlipcardHourly } from "./helpers/FlipcardHourly";
+import { FlipcardHourly } from "../helpers/FlipcardHourly";
 
 export const BadgeSecondaryHourly = ({ hour, weatherState }: BadgeSecondaryProps) => {
   const formatHour = (hour: string) => {
