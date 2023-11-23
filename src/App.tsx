@@ -10,6 +10,7 @@ import { getWeather } from "./functions/getWeather";
 function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [forecastOpen, setForecastOpen] = useState(true);
+  const [forecastOption, setForecastOption] = useState("3d");
 
   const [locationState, setLocationState] = useState<LocationState>({
     locationLoading: false,
@@ -33,9 +34,10 @@ function App() {
     setSearchOpen(true);
   };
 
-  const handleOpenForecast = () => {
+  const handleOpenForecast = (val: string = "3d") => {
     setSearchOpen(false);
     setForecastOpen(true);
+    setForecastOption(val);
   };
 
   console.log(weatherState.data);
@@ -60,7 +62,7 @@ function App() {
       {searchOpen && !forecastOpen && (
         <Search locationState={locationState} setLocationState={setLocationState} handleOpenForecast={handleOpenForecast} />
       )}
-      {forecastOpen && !searchOpen && <ForecastBadgesContainer weatherState={weatherState} />}
+      {forecastOpen && !searchOpen && <ForecastBadgesContainer weatherState={weatherState} forecastOption={forecastOption} />}
     </div>
   );
 }

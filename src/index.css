@@ -617,6 +617,10 @@ video {
   width: 100%;
 }
 
+.w-\[70px\] {
+  width: 70px;
+}
+
 .min-w-fit {
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -632,6 +636,10 @@ video {
 
 .max-w-\[90\%\] {
   max-width: 90%;
+}
+
+.max-w-\[50px\] {
+  max-width: 50px;
 }
 
 .cursor-pointer {
@@ -664,14 +672,6 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.self-end {
-  align-self: flex-end;
-}
-
-.justify-self-end {
-  justify-self: end;
 }
 
 .overflow-x-auto {
@@ -740,6 +740,11 @@ video {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
 }
 
 .bg-slate-600 {

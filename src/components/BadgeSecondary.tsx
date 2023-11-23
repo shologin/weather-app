@@ -6,7 +6,7 @@ export const BadgeSecondary = ({ date, weatherState }: BadgeSecondaryProps) => {
     return `${arr[2]}.${arr[1]}`;
   };
 
-  const findIndex = (date: string) => {
+  const findDate = (date: string) => {
     if (!weatherState.data) {
       throw new Error("Cannot get forecast data");
     }
@@ -19,9 +19,9 @@ export const BadgeSecondary = ({ date, weatherState }: BadgeSecondaryProps) => {
     else return false;
   };
 
-  const isToday = checkIsToday(date);
-  const formattedData = formatDate(date);
-  const currentDate = findIndex(date);
+  const isToday = checkIsToday(date!);
+  const formattedData = formatDate(date!);
+  const currentDate = findDate(date!);
   
 
   return (

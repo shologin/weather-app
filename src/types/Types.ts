@@ -7,7 +7,7 @@ export type badgePrimaryProps = {
 };
 
 export type ForecastOptionsProps = {
-  handleOpenForecast: () => void;
+  handleOpenForecast: (val?: string) => void;
 };
 
 export type SearchProps = {
@@ -18,11 +18,13 @@ export type SearchProps = {
 
 export type ForecastBadgesContainerProps = {
   weatherState: WeatherState;
+  forecastOption: string;
 };
 
 export type BadgeSecondaryProps = {
-  date: string;
+  date?: string;
   weatherState: WeatherState;
+  hour?: string;
 };
 
 // API response types
