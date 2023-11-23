@@ -1,6 +1,6 @@
 import { BadgeSecondaryProps } from "../types/Types";
 
-export const BadgeSecondary = ({ date, weatherState }: BadgeSecondaryProps) => {
+export const BadgeSecondaryDaily = ({ date, weatherState }: BadgeSecondaryProps) => {
   const formatDate = (val: string) => {
     const arr = val.split("-");
     return `${arr[2]}.${arr[1]}`;

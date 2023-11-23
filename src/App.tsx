@@ -57,7 +57,7 @@ function App() {
           locationState={locationState}
           weatherState={weatherState}
         />
-        <ForecastOptions handleOpenForecast={handleOpenForecast} />
+        <ForecastOptions handleOpenForecast={handleOpenForecast} forecastOption={forecastOption} />
       </div>
       {searchOpen && !forecastOpen && (
         <Search locationState={locationState} setLocationState={setLocationState} handleOpenForecast={handleOpenForecast} />

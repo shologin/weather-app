@@ -8,6 +8,7 @@ export type badgePrimaryProps = {
 
 export type ForecastOptionsProps = {
   handleOpenForecast: (val?: string) => void;
+  forecastOption: string;
 };
 
 export type SearchProps = {
