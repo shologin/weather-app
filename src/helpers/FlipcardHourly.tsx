@@ -2,7 +2,7 @@ import { FlipcardProps } from "../types/Types";
 
 export const FlipcardHourly = ({ children, currentHour }: FlipcardProps) => {
   return (
-    <div className="flipcard group w-full h-full [perspective:1000px]">
+    <div className="flipcard group w-[140px] h-full [perspective:1000px]">
       <div className="relative h-full w-full transition-all duration-500 rounded-xl shadow-xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* front */}
         <div className="absolute inset-0 flex-center flex-col gap-1 px-2">{children}</div>

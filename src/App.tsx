@@ -10,7 +10,7 @@ import { getWeather } from "./functions/getWeather";
 function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [forecastOpen, setForecastOpen] = useState(true);
-  const [forecastOption, setForecastOption] = useState("3d");
+  const [forecastOption, setForecastOption] = useState("24h");
 
   const [locationState, setLocationState] = useState<LocationState>({
     locationLoading: false,

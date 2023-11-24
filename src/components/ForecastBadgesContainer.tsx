@@ -5,27 +5,26 @@ import { BadgeSecondaryHourly } from "./BadgeSecondaryHourly";
 export const ForecastBadgesContainer = ({ weatherState, forecastOption }: ForecastBadgesContainerProps) => {
   const date = new Date();
   const currentHour = date.getHours();
+  const formattedHour = currentHour < 10 ? `0${currentHour}` : `${currentHour}`;  
 
   return (
     <>
       {!weatherState.loading && weatherState.data?.forecast && (
         <>
-          {forecastOption === "3d" ? (
+          {forecastOption === "3d" && (
             <ul className="forecast-badges-container border-[1px] rounded-3xl border-slate-800 flex gap-2 w-fit max-w-[90%] mt-5 p-2 overflow-x-auto overflow-y-hidden">
               {weatherState.data.forecast.forecastday.map((item, index) => (
                 <BadgeSecondaryDaily date={item.date} weatherState={weatherState} key={index} />
               ))}
             </ul>
-          ) : (
+          )}
+
+          {forecastOption === "24h" && (
             <ul className="forecast-badges-container border-[1px] rounded-3xl border-slate-800 flex gap-2 w-fit max-w-[90%] mt-5 p-2 overflow-x-auto overflow-y-hidden">
               {weatherState.data.forecast.forecastday[0].hour
-                .filter((el) => el.time.split(" ")[1].split(":")[0] >= currentHour.toString())
+                .filter((el) => el.time.split(" ")[1].split(":")[0] >= formattedHour)
                 .map((item, index) => (
-                  <BadgeSecondaryHourly
-                    hour={item.time}
-                    weatherState={weatherState}
-                    key={index}
-                  />
+                  <BadgeSecondaryHourly hour={item.time} weatherState={weatherState} key={index} />
                 ))}
             </ul>
           )}
