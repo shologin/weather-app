@@ -560,6 +560,11 @@ video {
   margin-bottom: 2px;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -596,12 +601,24 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
+.h-\[143px\] {
+  height: 143px;
+}
+
 .h-\[145px\] {
   height: 145px;
 }
 
 .h-\[1px\] {
   height: 1px;
+}
+
+.h-\[25px\] {
+  height: 25px;
 }
 
 .h-full {
@@ -612,8 +629,12 @@ video {
   max-height: 200px;
 }
 
-.w-2\/4 {
-  width: 50%;
+.max-h-\[600px\] {
+  max-height: 600px;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
 }
 
 .w-3\/4 {
@@ -622,6 +643,10 @@ video {
 
 .w-\[140px\] {
   width: 140px;
+}
+
+.w-\[2px\] {
+  width: 2px;
 }
 
 .w-fit {
@@ -633,6 +658,14 @@ video {
   width: 100%;
 }
 
+.w-\[200\] {
+  width: 200;
+}
+
+.w-\[200px\] {
+  width: 200px;
+}
+
 .min-w-fit {
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -640,6 +673,10 @@ video {
 
 .max-w-\[120px\] {
   max-width: 120px;
+}
+
+.max-w-\[150px\] {
+  max-width: 150px;
 }
 
 .max-w-\[200px\] {
@@ -678,20 +715,20 @@ video {
   gap: 0.5rem;
 }
 
-.gap-5 {
-  gap: 1.25rem;
+.gap-4 {
+  gap: 1rem;
 }
 
-.overflow-x-auto {
-  overflow-x: auto;
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .overflow-y-auto {
   overflow-y: auto;
 }
 
-.overflow-y-hidden {
-  overflow-y: hidden;
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .truncate {
@@ -781,6 +818,14 @@ video {
   padding: 0.5rem;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -789,16 +834,6 @@ video {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .py-10 {
@@ -819,9 +854,9 @@ video {
   text-align: center;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-sm {
@@ -1068,4 +1103,62 @@ video {
 
 .group:hover .group-hover\:\[transform\:rotateY\(180deg\)\] {
   transform: rotateY(180deg);
+}
+
+@media (min-width: 550px) {
+  .xs\:block {
+    display: block;
+  }
+
+  .xs\:hidden {
+    display: none;
+  }
+
+  .xs\:w-2\/4 {
+    width: 50%;
+  }
+
+  .xs\:flex-row {
+    flex-direction: row;
+  }
+
+  .xs\:flex-col {
+    flex-direction: column;
+  }
+
+  .xs\:gap-0 {
+    gap: 0px;
+  }
+
+  .xs\:overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  .xs\:overflow-y-hidden {
+    overflow-y: hidden;
+  }
+
+  .xs\:p-2 {
+    padding: 0.5rem;
+  }
+
+  .xs\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .xs\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .xs\:py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .xs\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }

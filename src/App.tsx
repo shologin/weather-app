@@ -10,7 +10,7 @@ import { getWeather } from "./functions/getWeather";
 function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [forecastOpen, setForecastOpen] = useState(true);
-  const [forecastOption, setForecastOption] = useState("24h");
+  const [forecastOption, setForecastOption] = useState("3d");
 
   const [locationState, setLocationState] = useState<LocationState>({
     locationLoading: false,
@@ -50,7 +50,7 @@ function App() {
   // }, [weatherState]);
   return (
     <div className="app background flex flex-col justify-center items-center py-10 mt-10 mx-auto">
-      <div className="flex-center gap-5">
+      <div className="flex-center flex-col gap-5 xs:flex-row">
         <BadgePrimary
           searchOpen={searchOpen}
           handleOpenSearch={handleOpenSearch}

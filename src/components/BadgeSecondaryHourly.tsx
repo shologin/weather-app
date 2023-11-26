@@ -33,9 +33,9 @@ export const BadgeSecondaryHourly = ({ hour, weatherState }: BadgeSecondaryProps
     <div className="badge-secondary glass-effect flex-center flex-col gap-1 w-[140px] h-[145px] border-[1px] border-slate-500 border-opacity-50 rounded-lg min-w-fit text-sm text-autumn cursor-pointer">
       <FlipcardHourly currentHour={currentHour}>
         {isNow ? (
-          <div className="glass-effect text-center w-full">Now</div>
+          <div className="glass-effect text-center w-full font-bold">Now</div>
         ) : (
-          <div className="badgeSecondary-date">{formattedHour}</div>
+          <div className="badgeSecondary-date font-bold">{formattedHour}</div>
         )}
         <div className="badgeSecondary-icon">
           <img src={currentHour.condition.icon} alt="icon" width="48px" />

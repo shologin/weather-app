@@ -12,7 +12,7 @@ export const ForecastBadgesContainer = ({ weatherState, forecastOption }: Foreca
       {!weatherState.loading && weatherState.data?.forecast && (
         <>
           {forecastOption === "3d" && (
-            <ul className="forecast-badges-container border-[1px] rounded-3xl border-slate-800 flex gap-2 w-fit max-w-[90%] mt-5 p-2 overflow-x-auto overflow-y-hidden">
+            <ul className="forecast-badges-container border-[1px] rounded-3xl border-slate-800 flex xs:flex-row flex-col gap-2 w-fit max-w-[90%] mt-5 p-2 xs:overflow-x-auto xs:overflow-y-hidden overflow-y-auto">
               {weatherState.data.forecast.forecastday.map((item, index) => (
                 <BadgeSecondaryDaily date={item.date} weatherState={weatherState} key={index} />
               ))}
@@ -20,7 +20,7 @@ export const ForecastBadgesContainer = ({ weatherState, forecastOption }: Foreca
           )}
 
           {forecastOption === "24h" && (
-            <ul className="forecast-badges-container border-[1px] rounded-3xl border-slate-800 flex gap-2 w-fit max-w-[90%] mt-5 p-2 overflow-x-auto overflow-y-hidden">
+            <ul className="forecast-badges-container border-[1px] rounded-3xl border-slate-800 flex xs:flex-row flex-col gap-2 w-fit max-w-[90%] max-h-[600px] mt-5 p-2 xs:overflow-x-auto xs:overflow-y-hidden overflow-x-hidden overflow-y-auto">
               {weatherState.data.forecast.forecastday[0].hour
                 .filter((el) => el.time.split(" ")[1].split(":")[0] >= formattedHour)
                 .map((item, index) => (

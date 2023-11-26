@@ -34,7 +34,7 @@ export const Search = ({ locationState, setLocationState, handleOpenForecast }: 
   // auto finding location findLocation() imported to this file and called in template
 
   return (
-    <div className="search mt-2 w-2/4 relative">
+    <div className="search mt-2 w-[200px] xs:w-2/4 relative">
       <div
         className={classNames(
           "search-bar",

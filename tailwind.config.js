@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{html,tsx}"],
@@ -9,6 +11,10 @@ export default {
         summer: "#eab308",
         autumn: "#fb923c",
       },
+    },
+    screens: {
+      xs: "550px",
+      ...defaultTheme.screens,
     },
   },
   plugins: [],

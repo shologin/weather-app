@@ -6,16 +6,16 @@ import { Puff, Radio } from "react-loader-spinner";
 
 export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState, weatherState }: badgePrimaryProps) => {
   return (
-    <div className="badge-primary py-2 px-5 glass-effect text-slate-400">
+    <div className="badge-primary py-2 px-2 xs:px-5 glass-effect text-slate-400">
       {weatherState.loading && <Radio width={65} height={65} colors={["#16a34a", "#14532d", "#052e16"]} />}
       {weatherState.data?.current && (
-        <div className="badgePrimary-top flex items-center justify-between gap-5">
+        <div className="badgePrimary-top flex items-center justify-between">
           <div className="badgePrimary-top-temperature">
-            <h3 className="text-4xl">
+            <h3 className="text-3xl xs:text-4xl">
               {weatherState.data.current.temp_c.toFixed(0)}
               <span className="text-secondary"> &deg;C</span>
             </h3>
-            <p className="text-sm">{weatherState.data.current.condition.text}</p>
+            <p className="text-sm max-w-[150px]">{weatherState.data.current.condition.text}</p>
           </div>
           <div className="badgePrimary-top-icon">
             <img src={weatherState.data.current.condition.icon} alt="icon" width="80" className="p-1" />
@@ -46,7 +46,8 @@ export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState, weat
               "inline-block",
               "text-slate-500",
               "ml-2",
-              "p-2",
+              "p-4",
+              "xs:p-2",
               "rounded-lg",
               "hover:bg-slate-400",
               "hover:text-slate-800",
