@@ -8,9 +8,20 @@ export const ForecastOptions = ({ handleOpenForecast, forecastOption }: Forecast
       <Popup
         trigger={
           <button
-            className={classNames("block", "p-3", "xs:px-2", "xs:py-1", "rounded-lg", "hover:bg-slate-600", "hover:text-slate-800", {
-              "bg-slate-700": forecastOption === "24h",
-            })}
+            className={classNames(
+              "block",
+              "p-3",
+              "xs:px-2",
+              "xs:py-1",
+              "rounded-lg",
+              "hover:bg-slate-600",
+              "hover:text-slate-800",
+              "transition-all",
+              "duration-200",
+              {
+                "bg-slate-700": forecastOption === "24h",
+              }
+            )}
             onClick={() => handleOpenForecast("24h")}
           >
             24H
@@ -29,9 +40,20 @@ export const ForecastOptions = ({ handleOpenForecast, forecastOption }: Forecast
       <Popup
         trigger={
           <button
-            className={classNames("block", "p-3", "xs:px-2", "xs:py-1", "rounded-lg", "hover:bg-slate-600", "hover:text-slate-800", {
-              "bg-slate-700": forecastOption === "3d",
-            })}
+            className={classNames(
+              "block",
+              "p-3",
+              "xs:px-2",
+              "xs:py-1",
+              "rounded-lg",
+              "hover:bg-slate-600",
+              "hover:text-slate-800",
+              "transition-all",
+              "duration-200",
+              {
+                "bg-slate-700": forecastOption === "3d",
+              }
+            )}
             onClick={() => handleOpenForecast("3d")}
           >
             3D

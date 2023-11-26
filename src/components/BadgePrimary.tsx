@@ -51,6 +51,8 @@ export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState, weat
               "rounded-lg",
               "hover:bg-slate-400",
               "hover:text-slate-800",
+              "transition-all",
+              "duration-200",
               {
                 "bg-slate-600": searchOpen,
                 "text-slate-800": searchOpen,

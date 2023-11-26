@@ -49,7 +49,7 @@ function App() {
   //   console.log(weatherState);
   // }, [weatherState]);
   return (
-    <div className="app background flex flex-col justify-center items-center py-10 mt-10 mx-auto">
+    <div className="app background flex flex-col justify-center items-center py-10 mt-10 mx-auto rounded-md">
       <div className="flex-center flex-col gap-5 xs:flex-row">
         <BadgePrimary
           searchOpen={searchOpen}
