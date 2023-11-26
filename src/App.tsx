@@ -53,6 +53,7 @@ function App() {
   return (
     <div className="app background flex flex-col justify-center items-center py-10 my-5 xs:my-20 mx-auto rounded-md">
       <Toaster />
+      <p>V. 1.1</p>
       <div className="flex-center flex-col gap-5 xs:flex-row">
         <BadgePrimary
           searchOpen={searchOpen}
