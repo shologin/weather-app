@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { LocationState, WeatherState } from "./types/Types";
 import { BadgePrimary } from "./components/BadgePrimary";
 import { ForecastBadgesContainer } from "./components/ForecastBadgesContainer";
@@ -40,7 +41,8 @@ function App() {
     setForecastOption(val);
   };
 
-  console.log(weatherState.data);
+
+  console.log(weatherState);
   useEffect(() => {
     getWeather(locationState, setWeatherState);
   }, [locationState]);
@@ -49,7 +51,8 @@ function App() {
   //   console.log(weatherState);
   // }, [weatherState]);
   return (
-    <div className="app background flex flex-col justify-center items-center py-10 mt-10 mx-auto rounded-md">
+    <div className="app background flex flex-col justify-center items-center py-10 my-5 xs:my-20 mx-auto rounded-md">
+      <Toaster />
       <div className="flex-center flex-col gap-5 xs:flex-row">
         <BadgePrimary
           searchOpen={searchOpen}

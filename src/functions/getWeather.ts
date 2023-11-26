@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { LocationState } from "../types/Types";
 
 export const getWeather = (locationState: LocationState, setWeatherState: Function) => {
@@ -29,6 +30,7 @@ export const getWeather = (locationState: LocationState, setWeatherState: Functi
       data: null,
       error: "Error with getting data",
     });
+    toast.error("Error with getting data from server");
     throw err;
   }
 };

@@ -1,4 +1,5 @@
 import { geoApiResponse } from "../types/Types";
+import toast from "react-hot-toast";
 
 // auto find location
 export const findLocation = (setLocationState: Function, handleOpenForecast: Function) => {
@@ -18,6 +19,7 @@ export const findLocation = (setLocationState: Function, handleOpenForecast: Fun
       fetch(geoApiUrl)
         .then((res) => {
           if (!res.ok || res.status !== 200) {
+            toast.error("Cannot get data from server");
             throw new Error("Cannot get data from server");
           }
           return res.json();
@@ -53,15 +55,22 @@ export const findLocation = (setLocationState: Function, handleOpenForecast: Fun
         locationData: null,
         locationError: "Oops...something went wrong",
       });
+      toast.error("Oops...something went wrong");
     }
   };
   const failure = (err: GeolocationPositionError) => {
     console.log(err);
     setLocationState({
       locationLoading: false,
-      locationData: null,
+      locationData: JSON.parse(localStorage.getItem("preferredCity")!) || {
+        id: 2801268,
+        city: "London",
+        region: "City of London, Greater London",
+        country: "United Kingdom",
+      },
       locationError: "Denied in location access",
     });
+    toast.error("Denied in location access");
   };
   window.navigator.geolocation.getCurrentPosition(success, failure);
 };
