@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { LocationState, WeatherState } from "./types/Types";
 import { BadgePrimary } from "./components/BadgePrimary";
 import { ForecastBadgesContainer } from "./components/ForecastBadgesContainer";
