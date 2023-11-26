@@ -12,7 +12,7 @@ export const Search = ({ locationState, setLocationState, handleOpenForecast }: 
   // on search typing
   const handleChange = (input: string) => {
     if (!resultsOpen) setResultsOpen(true);
-    const formattedURL = `http://api.weatherapi.com/v1/search.json?key=a6a87d8563134d0bace175318232111&q=${input}`;
+    const formattedURL = `https://api.weatherapi.com/v1/search.json?key=a6a87d8563134d0bace175318232111&q=${input}`;
     fetch(formattedURL)
       .then((res) => res.json())
       .then((data) => {

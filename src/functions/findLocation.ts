@@ -13,7 +13,7 @@ export const findLocation = (setLocationState: Function, handleOpenForecast: Fun
     const longitude = position.coords.longitude;
 
     // const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}`;
-    const geoApiUrl = `http://api.weatherapi.com/v1/search.json?key=a6a87d8563134d0bace175318232111&q=${latitude},${longitude}`;
+    const geoApiUrl = `https://api.weatherapi.com/v1/search.json?key=a6a87d8563134d0bace175318232111&q=${latitude},${longitude}`;
 
     try {
       fetch(geoApiUrl)
