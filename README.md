@@ -18,3 +18,4 @@ If you have any suggestions about the application, you are welcome to open a new
 
 ## 🔒 Privacy Terms and Conditions
 Weather app does not collect any data of yours. Chosen location saved in Local Storage and is not accesible from outer sources.
+The author uses public keys and is not responsible for their improper use.
