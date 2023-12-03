@@ -1,5 +1,6 @@
 import { BadgeSecondaryProps, ForecastHourlyAPIResponse } from "../types/Types";
 import { FlipcardHourly } from "../helpers/FlipcardHourly";
+import { imagesProvider } from "../imagesProvider/imagesProvider";
 
 export const BadgeSecondaryHourly = ({ hour, weatherState }: BadgeSecondaryProps) => {
   const formatHour = (hour: string) => {
@@ -38,7 +39,7 @@ export const BadgeSecondaryHourly = ({ hour, weatherState }: BadgeSecondaryProps
           <div className="badgeSecondary-date font-bold">{formattedHour}</div>
         )}
         <div className="badgeSecondary-icon">
-          <img src={currentHour.condition.icon} alt="icon" width="48px" />
+          <img src={imagesProvider(currentHour.condition.icon)} alt="icon" width="48px" />
         </div>
         <div className="text-xs max-w-[120px] truncate">{currentHour.condition.text}</div>
         <h3 className="text-xl">{currentHour.temp_c.toFixed(0)}&deg;C</h3>

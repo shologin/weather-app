@@ -1,5 +1,6 @@
 import { BadgeSecondaryProps } from "../types/Types";
 import { FlipcardDaily } from "../helpers/FlipcardDaily";
+import { imagesProvider } from "../imagesProvider/imagesProvider";
 
 export const BadgeSecondaryDaily = ({ date, weatherState }: BadgeSecondaryProps) => {
   const formatDate = (val: string) => {
@@ -33,7 +34,7 @@ export const BadgeSecondaryDaily = ({ date, weatherState }: BadgeSecondaryProps)
           <div className="badgeSecondary-date font-bold">{formattedDate}</div>
         )}
         <div className="badgeSecondary-icon">
-          <img src={currentDate.day.condition.icon} alt="icon" width="48px" />
+          <img src={imagesProvider(currentDate.day.condition.icon)} alt="icon" width="48px" />
         </div>
         <div className="text-xs max-w-[120px]">{currentDate.day.condition.text}</div>
         <h3 className="text-xl">{currentDate.day.avgtemp_c.toFixed(0)}&deg;C</h3>

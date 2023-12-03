@@ -1,10 +1,12 @@
 import classNames from "classnames";
 import Popup from "reactjs-popup";
+import { imagesProvider } from "../imagesProvider/imagesProvider";
 import { badgePrimaryProps } from "../types/Types";
 import { FiMapPin } from "react-icons/fi";
 import { Puff, Radio } from "react-loader-spinner";
 
 export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState, weatherState }: badgePrimaryProps) => {
+  
   return (
     <div className="badge-primary py-2 px-2 xs:px-5 glass-effect text-slate-400">
       {weatherState.loading && <Radio width={65} height={65} colors={["#16a34a", "#14532d", "#052e16"]} />}
@@ -18,7 +20,7 @@ export const BadgePrimary = ({ handleOpenSearch, searchOpen, locationState, weat
             <p className="text-sm max-w-[150px]">{weatherState.data.current.condition.text}</p>
           </div>
           <div className="badgePrimary-top-icon">
-            <img src={weatherState.data.current.condition.icon} alt="icon" width="80" className="p-1" />
+            <img src={imagesProvider(weatherState.data.current.condition.icon)} alt="icon" width="80" className="p-1" />
           </div>
         </div>
       )}
